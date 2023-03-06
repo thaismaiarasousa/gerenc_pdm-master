@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form name="form-users" id="formUsers" method="POST" action="/store/">
+                {% if msg %}
+                <div class="alert {{class}}">
+                    {{msg}}
+                </div>
+                {% endif %}
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name"><i class="bi bi-person"></i></label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Primeiro nome">
+                </div>
+                <div class="form-group">
+                    <label for="user"><i class="bi bi-person-badge"></i></label>
+                    <input class="form-control" type="text" name="user" id="user" placeholder="Nome de usuário">
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="bi bi-lock"></i></label>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
