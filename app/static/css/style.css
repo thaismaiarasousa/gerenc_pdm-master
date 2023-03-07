@@ -47,7 +47,7 @@ header {
     letter-spacing: 0.4rem;
     cursor: pointer;
     padding-right: 30px;
-    margin-right: -1000px; /* Adicionado para mover a logo para a esquerda */
+    
 }
 
 .menu-content .list-itens {
