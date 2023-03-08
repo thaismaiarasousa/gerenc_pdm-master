@@ -131,15 +131,18 @@ form {
   background-color: rgb(251, 255, 0);
   border: none;
   color: black;
-  padding: 15px 30px;
+  padding: 20px 40px; /* aumentar padding */
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s ease;
+  margin-top: auto; /* centralizar verticalmente */
+  margin-bottom: auto; /* centralizar verticalmente */
 }
 
 .form-container input[type="submit"]:hover {
   background-color: rgba(251, 255, 0, 0.8);
   color: black;
+  padding: 20px 60px; /* aumentar padding */
 }
 
 .form-container label[for='password'] {
@@ -193,6 +196,36 @@ form {
 
 /* Botões */
 
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  font-size: 0.5em;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  border-radius: 20px;
+  position: relative;
+  transition: 1.5s;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: rgb(251, 255, 0);
+  border: none;
+}
+
 
 .btns {
     display: flex;
@@ -218,6 +251,7 @@ form {
 }
 
 .btns button:hover {
+    
     color: rgb(251, 255, 0);
     border: none;
 }
