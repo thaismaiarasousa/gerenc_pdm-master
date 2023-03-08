@@ -95,12 +95,93 @@ main {
     align-items: center;
 }
 
+/* Formulários */
+form {
+  font-size: 3em; /* ou outro valor desejado */
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.form-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-container input[type="submit"] {
+  font-size: 1.2rem;
+  background-color: rgb(251, 255, 0);
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: rgba(251, 255, 0, 0.8);
+  color: black;
+}
+
+.form-container label[for='password'] {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 20px;
+  display: block;
+  }
+  
+.form-container input[type='password'] {
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  }
+
+
+
 /* Textos conteudo principal */
 .primary-text {
     width: 850px;
     font-size: 8rem;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+.primary-textcreate {
+  width: 850px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.primary-textcreate2 {
+  width: 850px;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .second-text {
@@ -111,16 +192,19 @@ main {
 }
 
 /* Botões */
+
+
 .btns {
     display: flex;
     justify-content: center;
     gap: 20px;
+    
 }
 
 .btns button {
-    font-size: 1.8rem;
+    font-size: 1.5em;
     width: 250px;
-    height: 100px;
+    height: 120px;
     cursor: pointer;
     border: 1px solid white;
     color: white;
@@ -131,12 +215,29 @@ main {
     border-radius: 20px;
     position: relative;
     transition: 1.5s;
-    }
-    
-    .btns button:hover {
+}
+
+.btns button:hover {
     color: rgb(251, 255, 0);
     border: none;
-    }
+}
+
+.btns button:before {
+    content: ' ';
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 60px;
+    background-color: rgb(61, 61, 61);
+    z-index: -1;
+    transition: 1s;
+}
+
+.btns button:hover:before {
+    width: 100%;
+}
     
     /* Rodapé */
     footer {
@@ -197,3 +298,4 @@ main {
     font-size: 1.4rem;
     }
     }
+    
