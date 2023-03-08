@@ -1,33 +1,45 @@
 {% extends 'main.html' %}
 
-{% block content %}
+div class="main-content">
+            <h1 class="primary-text">Voar nunca foi tão perto!</h1>
+            <h2 class="second-text">VEM VOAR COM A GENTE!</h2>
+            <div class="btns">
+                <button class="primary-textcreate">Agendar experimental GRATUITA</button>
+                <button class="btn-personal">Tenho uma dúvida!</button>
+            </div>
 
-<div class="container">
-    <h1>Cadastro de Usuário</h1>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form name="form-users" id="formUsers" method="POST" action="/store/">
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="main-content">
+        <h1 class="primary-textcreate2">Cadastre-se</h1>
+        <p class="primary-textcreate">Preencha os campos abaixo para criar sua conta.</p>
+        <div class="form-container">
+            <form name="form-users" id="formUsers" method="POST" action="/store/" class="p-4">
                 {% if msg %}
                 <div class="alert {{class}}">
                     {{msg}}
                 </div>
                 {% endif %}
                 {% csrf_token %}
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="name"><i class="bi bi-person"></i></label>
                     <input class="form-control" type="text" name="name" id="name" placeholder="Primeiro nome">
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="user"><i class="bi bi-person-badge"></i></label>
                     <input class="form-control" type="text" name="user" id="user" placeholder="Nome de usuário">
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="password"><i class="bi bi-lock"></i></label>
                     <input class="form-control" type="password" name="password" id="password" placeholder="Senha">
                 </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="form-container ">Cadastrar</button>
             </form>
         </div>
     </div>
 </div>
+
 {% endblock %}

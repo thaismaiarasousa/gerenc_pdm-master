@@ -19,7 +19,7 @@ from app.views import home, create, store, painel, dologin, dashboard, logouts, 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home),
+    path("home/", home),
     path("create/", create),
     path("store/", store),
     path("painel/", painel),
