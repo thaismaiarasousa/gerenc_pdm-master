@@ -2,33 +2,37 @@
 
 {% block content %}
 
-<div class="container">
-    <h1>Dados e login</h1>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form name="formPainel" id="formPainel" method="POST" action="/dologin/" class="needs-validation" novalidate>
-                {% if msg %}
-                <div class="alert {{class}}">
-                    {{msg}}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="main-content">
+        <h1 class="primary-textcreate2">Acesso à área restrita:</h1>
+    <div class="form-container">
+        
+        <form name="formPainel" id="formPainel" method="POST" action="/dologin/" class="needs-validation" novalidate>
+            {% if msg %}
+            <div class="alert {{class}}">
+                {{msg}}
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="user"><i class="bi bi-person"></i></label>
+                <input class="form-control" type="text" name="user" id="user" placeholder="Nome do Usuário" required>
+                <div class="invalid-feedback">
+                    O campo é obrigatório.
                 </div>
-                {% endif %}
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="user"><i class="bi bi-person"></i></label>
-                    <input class="form-control" type="text" name="user" id="user" placeholder="Nome do Usuário" required>
-                    <div class="invalid-feedback">
-                        O campo é obrigatório.
-                    </div>
+            </div>
+            <div class="form-group">
+                <label for="password"><i class="bi bi-lock"></i></label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="Digite a senha" required>
+                <div class="invalid-feedback">
+                    O campo é obrigatório.
                 </div>
-                <div class="form-group">
-                    <label for="password"><i class="bi bi-lock"></i></label>
-                    <input class="form-control" type="password" name="password" id="password" placeholder="Digite a senha" required>
-                    <div class="invalid-feedback">
-                        O campo é obrigatório.
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
         </div>
     </div>
 </div>
