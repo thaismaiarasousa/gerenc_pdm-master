@@ -4,10 +4,11 @@
 {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">    
 
-    <div class="container d-flex align-items-center justify-content-center vh-100{% if show_message %} message-shown{% endif %}">
+    <div class="container d-flex align-items-center justify-content-center vh-100
+    {% if show_message %} message-shown{% endif %}">
     <div class="main-content">
         
-        <p class="primary-textcreate">Preencha os campos abaixo para criar sua conta.</p>
+        <p class="primary-textcreate">Preencha os campos abaixo para criar sua conta:</p>
         <div class="form-container">
             
             

@@ -2,10 +2,15 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        <div class="text-center d-flex flex-column align-items-center">
-            <h1>Área Restrita</h1>
-            <p class="mb-0">Bem vinda!</p>
-            <a href="/logouts/">Sair</a>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <div class="container d-flex align-items-center justify-content-center vh-100">
+            <div class="content-container">
+                <h1>Área Restrita</h1>
+                <h2>Bem-vinde!</h2>
+                
+                <a href="/logouts/" class="btn btn-primary">Sair</a>
+            </div>
         </div>
     {% else %}
         <p>Você não tem acesso a esta área!</p>

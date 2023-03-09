@@ -24,6 +24,28 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Conteúdo */
+
+.content-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  justify-items: center;
+  text-align: center;
+}
+
+.content-container h1 {
+  font-size: 5rem;
+}
+
+.content-container h2 {
+  font-size: 3.5rem;
+}
+
+.content-container a {
+  font-size: 2.5rem;
+}
+
 /* Menu - Header - NavBar */
 header {
     width: 100%;
@@ -194,14 +216,14 @@ margin-bottom: 1rem;
 
 .primary-textcreate {
   width: 700px;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .primary-textcreate2 {
   width: 700px;
-  font-size: 6rem;
+  font-size: 5rem;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -352,3 +374,4 @@ margin-bottom: 1rem;
     }
     }
     
+
