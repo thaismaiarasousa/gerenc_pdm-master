@@ -15,15 +15,18 @@ def create(request):
 def store(request):
     data = {}
     if(request.POST['password'] != request.POST['password-conf']):
-        data['msg'] = 'As duas senhas não coincidem. Escreva novamente!'
-        data['class']= 'alert-danger'    
-        
+        data['msg'] = 'Senha e confirmação de senha diferentes!'
+        data['class'] = 'alert-danger'
     else:
         user = User.objects.create_user(request.POST['user'], request.POST['email'], request.POST['password'])
+        user.first_name = request.POST['name']
+        user.save()
         data['msg'] = 'Usuário cadastrado com sucesso!'
-        data['class']= 'alert-sucess' 
-            
-    return render(request, 'create.html', data)
+        data['class'] = 'alert-success'
+        data['show_message'] = True
+    return render(request,'create.html',data)
+
+
 
 # Formulário de login de usuários
 def painel(request):
