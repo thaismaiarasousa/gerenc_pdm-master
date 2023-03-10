@@ -81,13 +81,26 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '9Eminhasous@3',
+        'PASSWORD': '1234',
         'NAME': 'gerenc_aulas',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
     }
 }
+
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Permite o login cadastro comum (username)
+    'django.contrib.auth.backends.ModelBackend', 
+
+    # Permite o login cadastro personalizados do django allauth
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+    
+ 
 
 
 # Password validation
@@ -123,5 +136,7 @@ STATICFILES_DIR = ('/static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+ALLOWED_HOSTS = ['6142-2804-14d-54b2-8010-307a-8a0c-c59-30e2.sa.ngrok.io']
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
