@@ -58,8 +58,6 @@ def logouts(request):
     return redirect('/painel/')
 
 
-
-
 # Alterar a senha
 def changePassword(request):   
     user = User.objects.get(email=request.user.email)

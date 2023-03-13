@@ -37,9 +37,30 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     "app",
-    "bootstrap4"
+    "bootstrap4",
+    #providers
+    "allauth.socialaccount.providers.google",
 ]
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '579081825517-8vd8ocmp94he51naeudam9q62ctfkeme.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+        
+    }
+}
+
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -137,6 +158,6 @@ STATICFILES_DIR = ('/static/')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-ALLOWED_HOSTS = ['6142-2804-14d-54b2-8010-307a-8a0c-c59-30e2.sa.ngrok.io']
+#ALLOWED_HOSTS = ['6142-2804-14d-54b2-8010-307a-8a0c-c59-30e2.sa.ngrok.io']
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

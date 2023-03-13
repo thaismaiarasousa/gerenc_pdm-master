@@ -313,6 +313,31 @@ margin-bottom: 1rem;
 .btns button:hover:before {
     width: 100%;
 }
+
+.btn-google {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-google:hover {
+  background-color: #333;
+  color: #fff;
+  border-radius: 3rem;
+
+}
+
+.btn-google i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
     
     /* Rodapé */
     footer {
