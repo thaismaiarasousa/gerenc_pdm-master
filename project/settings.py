@@ -53,8 +53,8 @@ SITE_ID = 1
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '579081825517-8vd8ocmp94he51naeudam9q62ctfkeme.apps.googleusercontent.com',
-            'secret': 'AIzaSyBx2q6rR-lSg350IrqNGf-25U8LMOgX5gM',
+            'client_id': ' ',
+            'secret': ' ',
             'key': ''
         },
         'oauth2_settings': {
@@ -104,7 +104,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': ' ',
+        'PASSWORD': '1234',
         'NAME': 'django_api',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
