@@ -1,0 +1,32 @@
+<!-- header.component.html -->
+<header [ngClass]="{'scrolled': isScrolled}">
+    
+    <div *ngIf="isScrolled" class="menu-icon2" [class.open]="isMenuOpen" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <nav *ngIf="!isScrolled">
+        <a routerLink="/home">Agendar Aula</a>
+        <a routerLink="/home">Avisos</a>
+        <a routerLink="/home">Quem Somos</a>
+        <a routerLink="/galeria">Galeria</a>
+        <a routerLink="/perguntas">Perguntas Frequentes</a>
+        <a routerLink="/contato">Contato e Localização</a>
+    </nav>
+    
+    <div class="logo">
+        <img src="assets/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
+    </div>
+
+    <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">
+        <!-- Links do menu para dispositivos móveis -->
+        <a routerLink="/home" (click)="closeMenu()">Agendar Aula</a>
+        <a routerLink="/home" (click)="closeMenu()">Avisos</a>
+        <a routerLink="/home" (click)="closeMenu()">Quem Somos</a>
+        <a routerLink="/galeria" (click)="closeMenu()">Galeria</a>
+        <a routerLink="/perguntas" (click)="closeMenu()">Perguntas Frequentes</a>
+        <a routerLink="/contato" (click)="closeMenu()">Contato e Localização</a>
+    </div>
+</header>
