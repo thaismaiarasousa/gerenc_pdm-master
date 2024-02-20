@@ -1,119 +1,87 @@
 <div class="home-container">
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
-    <p>home works!</p>
+    <section class="video-section" id="videoApresentacao">
+        <video [muted]="true" autoplay="true" loop="true">
+            <source src="../../assets/video-home/video-home-apresentacao.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section id="agendarExperimental" class="opacidade">
+        <div class="conteudo">
+            <h2 class="texto-titulo">Cia Pé de Manga</h2>
+
+            <p class="texto-subtitulo">
+                Clique no botão abaixo e agende já sua<br>
+                <strong>aula experimental </strong> gratuita <br>
+                <button class="btn-enviar-whatsapp" mat-raised-button matTooltip="Enviar via Whatsapp"
+                    color="accent" aria-label="Enviar via Whatsapp">
+                    Clique aqui para verificar os horários via Whatsapp
+                </button>
+            </p>
+        </div>
+        <div class="inclinar">
+        </div>
+    </section>
+
+    <section class="section" id="sobrenos">
+        <h2>
+            Cia pé de manga - Aéreos - Quem somos?
+        </h2>
+        <p>
+            sobre a pé de manga <br>
+            tal tal tal <br>
+            tal tal tal <br>
+            tal tal tal <br>
+            tal tal tal <br>
+            tal tal tal <br>
+            tal tal tal <br>
+            tal tal tal <br>
+        </p>
+    </section>
+
+    <section class="section" id="galeria">
+        <h2>
+            Nossa Galeria
+        </h2>
+        <app-carrossel></app-carrossel>
+    </section>
+
+    <section class="section" id="perguntasFrequentes">
+        <h2>
+            Perguntas frequentes
+        </h2>
+        <p>
+            <strong> Pergunta: </strong> Resposta
+        </p>
+        <p>
+            <strong> Pergunta: </strong> Resposta
+        </p>
+        <p>
+            <strong> Pergunta: </strong> Resposta
+        </p>
+    </section>
+
+    <section class="section contato-container" id="contatoLocalizacao">
+        <div>
+            <h2>Entre em contato</h2>
+            <form class="example-form">
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nome</mat-label>
+                        <input matInput placeholder="Qual o seu nome?">
+                    </mat-form-field>
+                </div>
+                <div class="mensagem-box">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mensagem</mat-label>
+                        <textarea matInput placeholder="Digite sua mensagem aqui..."></textarea>
+                    </mat-form-field>
+
+                    <button class="btn-enviar-whatsapp-contato" mat-mini-fab matTooltip="Enviar via Whatsapp" color="accent"
+                        aria-label="Enviar via Whatsapp">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>

@@ -11,10 +11,27 @@ import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from '../home/home.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+import { CarrosselComponent } from '../carrossel/carrossel.component';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+    NguCarousel,
+    NguCarouselDefDirective,
+    NguCarouselNextDirective,
+    NguCarouselPrevDirective,
+    NguItemComponent,
+    NguTileComponent
+  } from '@ngu/carousel';
 
 @NgModule({
     declarations: [
         MainComponent,
+        CarrosselComponent,
         HeaderComponent,
         FooterComponent,
         HomeComponent,
@@ -24,9 +41,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ContactComponent,
     ],
     imports: [
-        CommonModule, 
-        RouterModule, 
-        BrowserAnimationsModule
+        BrowserModule,
+        CommonModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTooltipModule,
+        NguCarousel, 
+        NguTileComponent,   
+        NguCarousel,
+        NguCarouselDefDirective,
+        NguCarouselNextDirective,
+        NguCarouselPrevDirective,
+        NguItemComponent,
     ],
     exports: [MainComponent]
 })

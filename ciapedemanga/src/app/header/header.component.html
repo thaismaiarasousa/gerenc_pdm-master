@@ -1,12 +1,12 @@
 <!-- header.component.html -->
-<header [ngClass]="{'scrolled': isScrolled}">
+<header class="header-container" [ngClass]="{'scrolled': isScrolled}">
     
     <div *ngIf="isScrolled" class="menu-icon2" [class.open]="isMenuOpen" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    
+
     <nav *ngIf="!isScrolled">
         <a routerLink="/home">Agendar Aula</a>
         <a routerLink="/home">Avisos</a>
@@ -17,7 +17,7 @@
     </nav>
     
     <div class="logo">
-        <img src="assets/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
+        <img src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
     </div>
 
     <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">

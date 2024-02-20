@@ -16,6 +16,7 @@ export class HeaderComponent {
     if (this.isMenuOpen) {
       this.isMenuOpen = this.isScrolled;
     }
+    this.isScrolled = true
   }
 
   toggleMenu() {
