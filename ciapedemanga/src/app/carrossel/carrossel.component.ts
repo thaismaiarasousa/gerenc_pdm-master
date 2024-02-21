@@ -14,7 +14,7 @@ export class CarrosselComponent implements AfterViewInit {
 
   @ViewChild('myCarousel') myCarousel!: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
-    grid: { xs: 2, sm: 2, md: 2, lg: 2, all: 0 },
+    grid: { xs: 1, sm: 1, md: 2, lg: 2, all: 0 },
     load: 3,
     interval: {timing: 4000, initialDelay: 1000},
     loop: true,

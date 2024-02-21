@@ -2,6 +2,7 @@
     padding: 65px;
     background-color: #8bdb34;
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+    width: 100%;
 }
 
 .spacer {
@@ -19,4 +20,10 @@ img {
     width: 30px;
     padding-right: 10px;
 }
- 
+
+.logo-cia {
+    float: inline-end;
+    width: 120px;
+    position: relative;
+    left: 56px;
+}

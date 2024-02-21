@@ -17,7 +17,7 @@
     </nav>
     
     <div class="logo">
-        <img src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
+        <img [ngClass]="animateImage ? 'desce-imagem' : 'sobe-imagem'" class="logo-animation" src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
     </div>
 
     <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">

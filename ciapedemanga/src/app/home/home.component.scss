@@ -3,9 +3,10 @@
 }
 
 .section {
-  background-color: #8bdb34;
+  background-color: #325733;
   padding: 65px;
   margin: 30px 0px;
+  width: 100%;
 }
 
 .video-section {
@@ -33,11 +34,11 @@
   position: relative;
   top: 77px;
   clip-path: polygon(0 0, 78% 17%, 67% 23%, 9% 55%);
-  background-color: #8bdb34;
+  background-color: #325733;
 }
 
 .contato-container {
-  clip-path: polygon(0 0, 81% 15%, 83% 78%, 0% 87%);
+  clip-path: polygon(0 0, 100% 18%, 100% 80%, 0% 88%);
 }
 
 .conteudo {
@@ -61,8 +62,19 @@ video {
   z-index: -1;
 }
 
-.texto-titulo {
+.texto-titulo-inicial {
+  font-size: 80px;
   font-family: 'Anton';
+}
+
+.texto-titulo {
+  font-size: 50px;
+  font-family: 'Anton';
+}
+
+.texto-subtitulo-inicial {
+  font-size: 40px;
+  font-family: 'bebas-neue-cyrillic';
 }
 
 .texto-subtitulo {
@@ -86,6 +98,9 @@ video {
 .btn-enviar-whatsapp {
   display: table-cell;
   font-size: 20px;
+  margin: 36px;
+  height: fit-content;
+  padding: 10px;
 }
 
 .mensagem-box {
@@ -96,4 +111,44 @@ video {
 
 .btn-enviar-whatsapp-contato {
   position: absolute;
+}
+
+.galeria-container {
+  clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 87%);
+}
+
+.sobrenos-container {
+  font-family: 'bebas-neue-cyrillic';
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.texto-container {
+  display: flex;
+  flex-direction: row;
+  text-align: justify;
+}
+
+.p-explicacao-quemsomos {
+  margin-right: 30px;
+}
+
+.espacamento-linha {
+  line-height: 20px;
+}
+
+.img-aviso {
+  min-height: 10%;
+  width: 36%;
+  height: 20%;
+}
+
+.perguntas-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-ver-mais-perguntas {
+  margin-top: 10px;
+  width: 173px;
 }
