@@ -1,0 +1,15 @@
+.texto-titulo {
+    font-size: 50px;
+    font-family: 'Anton';
+}
+
+.perguntas-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.centralizar-icone {
+    position: relative;
+    top: 7px;
+}

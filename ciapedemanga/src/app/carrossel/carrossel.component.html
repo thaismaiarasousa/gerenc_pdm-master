@@ -1,12 +1,7 @@
-<ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
-    <div *nguCarouselDef="let item;" class="item">
-      <div class="tile">
-        <img [src]="item" draggable="false">
-      </div>
-    </div>
-    <ul class="myPoint" NguCarouselPoint>
-      <li *ngFor="let j of myCarousel.pointNumbers; let k = index" [class.active]="k == myCarousel.activePoint" (click)="myCarousel.moveTo(k)"></li>
-    </ul>
-  </ngu-carousel>
-  
-  
+<ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+
+  <ngu-tile class="tile" *nguCarouselDef="let item; let i = index">
+    <img class="img-border" [src]="item" style="min-height: 200px; width: 30vw;" draggable="false">
+  </ngu-tile>
+
+</ngu-carousel>

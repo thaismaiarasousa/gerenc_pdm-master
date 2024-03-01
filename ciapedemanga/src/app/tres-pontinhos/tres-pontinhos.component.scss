@@ -1,0 +1,21 @@
+.pontos-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ponto {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  /* Adicione um efeito ondulado para as bordas do ponto */
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+}
+

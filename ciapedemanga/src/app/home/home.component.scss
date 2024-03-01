@@ -1,44 +1,90 @@
+/* Comum */
+@font-face {
+  font-family: 'Stadio';
+  src: url('../../assets/fonts/FontsFree-Net-Stadio-Now-Display-Bold-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$cor-rosa: #F18BB8;
+$cor-branca: #ffffff;
+$cor-preta: #000000;
+$cor-amarela: #ffff00;
+
 .home-container {
-  color: white;
+  background-color: $cor-rosa;
 }
 
-.section {
-  background-color: #325733;
-  padding: 65px;
-  margin: 30px 0px;
-  width: 100%;
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.video-section {
-  padding: 0px;
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.home-container section:nth-child(even) {
+  background-color: $cor-branca;
+  color: $cor-preta;
 }
 
-.example-full-width {
-  width: 100%;
+.home-container section:nth-child(odd) {
+  background-color: $cor-rosa;
+  color: $cor-preta;
 }
 
-.opacidade {
-  height: 71vh;
-  opacity: 0.9;
-}
 
-.inclinar {
+/* Home */
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
-  top: 77px;
-  clip-path: polygon(0 0, 78% 17%, 67% 23%, 9% 55%);
-  background-color: #325733;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.contato-container {
-  clip-path: polygon(0 0, 100% 18%, 100% 80%, 0% 88%);
+.texto-titulo-inicial {
+  font-size: 7em;
+  font-family: 'Stadio', sans-serif;
+  -webkit-text-stroke: 1px white;
+  word-break: break-word;
+  // fontes utilizadas em outros
+  // font-family: 'Noto Sans', sans-serif;
+  // font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.img-home {
+  border-radius: 250px;
+  width: 100%;
+  border: 8px solid white;
+}
+
+@media only screen and (min-width: 1000px) {
+  .posicionar-img-home {
+    align-self: flex-end;
+    top: 10vw;
+    transition: top 0.4s ease; /* Adiciona uma transição suave para o efeito visual */
+  }
+}
+
+.texto-subtitulo-inicial {
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: -webkit-center;
+}
+
+.espacamento-home {
+  padding-top: 10%;
+}
+
+.alinhar-centro {
+  text-align: center;
 }
 
 .conteudo {
@@ -52,19 +98,13 @@
   z-index: 999;
 }
 
-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
 
-.texto-titulo-inicial {
-  font-size: 80px;
-  font-family: 'Anton';
+/* produções */
+.producoes-container {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 56px;
 }
 
 .texto-titulo {
@@ -72,83 +112,14 @@ video {
   font-family: 'Anton';
 }
 
-.texto-subtitulo-inicial {
-  font-size: 40px;
-  font-family: 'bebas-neue-cyrillic';
-}
-
 .texto-subtitulo {
-  font-family: 'bebas-neue-cyrillic';
+  font-family: "Bebas Neue", sans-serif;
 }
 
-@font-face {
-  font-family: 'Anton';
-  src: url('../../assets/custom-fonts/Anton.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
+.img-sobrenos {
+  border-radius: 250px;
+  width: 100%;
+  border: 23px solid #ffffff;
+  padding: 0;
 }
 
-@font-face {
-  font-family: 'bebas-neue-cyrillic';
-  src: url('../../assets/custom-fonts/bebas-neue-cyrillic.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.btn-enviar-whatsapp {
-  display: table-cell;
-  font-size: 20px;
-  margin: 36px;
-  height: fit-content;
-  padding: 10px;
-}
-
-.mensagem-box {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-}
-
-.btn-enviar-whatsapp-contato {
-  position: absolute;
-}
-
-.galeria-container {
-  clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 87%);
-}
-
-.sobrenos-container {
-  font-family: 'bebas-neue-cyrillic';
-  font-size: 18px;
-  line-height: 25px;
-}
-
-.texto-container {
-  display: flex;
-  flex-direction: row;
-  text-align: justify;
-}
-
-.p-explicacao-quemsomos {
-  margin-right: 30px;
-}
-
-.espacamento-linha {
-  line-height: 20px;
-}
-
-.img-aviso {
-  min-height: 10%;
-  width: 36%;
-  height: 20%;
-}
-
-.perguntas-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.btn-ver-mais-perguntas {
-  margin-top: 10px;
-  width: 173px;
-}

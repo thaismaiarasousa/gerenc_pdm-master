@@ -7,15 +7,15 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  isScrolled = false;
+  isScrolled = true;
   animateImage = false;
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    this.isScrolled = window.scrollY > 50; 
-    if (this.isMenuOpen) {
-      this.isMenuOpen = this.isScrolled;
-    }
+    // this.isScrolled = window.scrollY > 50; 
+    // if (this.isMenuOpen) {
+    //   this.isMenuOpen = this.isScrolled;
+    // }
     this.isScrolled = true
 
     const isScrollAtBottom = window.scrollY >= document.documentElement.scrollHeight - window.innerHeight;

@@ -27,6 +27,8 @@ import {
     NguItemComponent,
     NguTileComponent
   } from '@ngu/carousel';
+  import { GirassolComponent } from '../girassol/girassol.component';
+  import { TresPontinhosComponent } from '../tres-pontinhos/tres-pontinhos.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +41,8 @@ import {
         GalleryComponent,
         FaqComponent,
         ContactComponent,
+        GirassolComponent,
+        TresPontinhosComponent
     ],
     imports: [
         BrowserModule,

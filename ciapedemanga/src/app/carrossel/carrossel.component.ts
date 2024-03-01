@@ -1,42 +1,57 @@
-import { Component, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { NguCarouselConfig } from '@ngu/carousel';
 @Component({
   selector: 'app-carrossel',
   templateUrl: './carrossel.component.html',
   styleUrls: ['./carrossel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarrosselComponent implements AfterViewInit {
-  name = 'Angular';
-  slideNo = 0;
-  withAnim = true;
-  resetAnim = true;
-
-  @ViewChild('myCarousel') myCarousel!: NguCarousel<any>;
-  carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 1, md: 2, lg: 2, all: 0 },
-    load: 3,
-    interval: {timing: 4000, initialDelay: 1000},
-    loop: true,
-    touch: true,
-    velocity: 0.2
-  }
-  carouselItems = [
-    './assets/galeria/mostra_danca_aerea.png', 
+export class CarrosselComponent implements OnInit {
+  imgags = [
     './assets/galeria/mostra_danca_aerea.png',
-    './assets/galeria/mostra_danca_aerea.png'];
+    './assets/galeria/mostra_danca_aerea.png',
+    './assets/galeria/mostra_danca_aerea.png',
+    './assets/galeria/mostra_danca_aerea.png'
+  ];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  public carouselTileItems: Array<any> = this.imgags;
+  public carouselTiles: any = {
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: []
+  };
+  public carouselTile: NguCarouselConfig = {
+    grid: { xs: 2, sm: 2, md: 3, lg: 3, all: 0 },
+    slide: 3,
+    speed: 250,
+    point: {
+      visible: true
+    },
+    load: 2,
+    velocity: 0,
+    touch: true,
+    easing: 'cubic-bezier(0, 0, 0.2, 1)'
+  };
+  constructor() { }
 
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
+  ngOnInit() {
+    this.carouselTileItems.forEach(el => {
+      this.carouselTileLoad(el);
+    });
   }
 
-  reset() {
-    this.myCarousel.reset(!this.resetAnim);
-  }
-
-  moveTo(slide: any) {
-    this.myCarousel.moveTo(slide, !this.withAnim);
+  public carouselTileLoad(j: any) {
+    const len = this.carouselTiles[j]?.length;
+    if (len <= 30) {
+      for (let i = len; i < len + 15; i++) {
+        this.carouselTiles[j].push(
+          this.imgags[Math.floor(Math.random() * this.imgags?.length)]
+        );
+      }
+    }
   }
 }
+
