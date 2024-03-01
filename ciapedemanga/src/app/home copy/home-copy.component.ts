@@ -3,8 +3,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+  selector: 'app-home-copy',
+  templateUrl: './home-copy.component.html',
   styleUrl: './home.component.scss',
   animations:
     [trigger('expandCollapse', [
