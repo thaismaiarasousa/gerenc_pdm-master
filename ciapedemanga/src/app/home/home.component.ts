@@ -1,11 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   exibirPerguntas = false;

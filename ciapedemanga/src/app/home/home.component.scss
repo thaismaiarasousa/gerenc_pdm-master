@@ -1,9 +1,8 @@
-/* Comum */
 @font-face {
-  font-family: 'Stadio';
-  src: url('../../assets/fonts/FontsFree-Net-Stadio-Now-Display-Bold-trial.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Stadio';
+    src: url('../../assets/fonts/FontsFree-Net-Stadio-Now-Display-Bold-trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 $cor-rosa: #F18BB8;
@@ -12,96 +11,93 @@ $cor-preta: #000000;
 $cor-amarela: #ffff00;
 
 .home-container {
-  background-color: $cor-rosa;
+    background-color: $cor-rosa;
 }
 
 .anton-regular {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 section {
-  padding: 56px;
+    padding: 56px;
 }
 
 .home-container section:nth-child(even) {
-  background-color: $cor-branca;
-  color: $cor-preta;
+    background-color: $cor-branca;
+    color: $cor-preta;
 }
 
 .home-container section:nth-child(odd) {
-  background-color: $cor-rosa;
-  color: $cor-preta;
+    background-color: $cor-rosa;
+    color: $cor-preta;
 }
 
-
-/* Home */
 video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .texto-titulo-inicial {
-  font-size: 7em;
-  font-family: 'Stadio', sans-serif;
-  -webkit-text-stroke: 1px white;
-  word-break: break-word;
-  // fontes utilizadas em outros
-  // font-family: 'Noto Sans', sans-serif;
-  // font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 7em;
+    font-family: 'Stadio', sans-serif;
+    -webkit-text-stroke: 1px white;
+    word-break: break-word;
+    // fontes utilizadas em outros
+    // font-family: 'Noto Sans', sans-serif;
+    // font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 .img-home {
-  border-radius: 250px;
-  width: 100%;
-  border: 8px solid white;
+    border-radius: 250px;
+    width: 100%;
+    border: 8px solid white;
 }
 
 @media only screen and (min-width: 1000px) {
-  .posicionar-img-home {
-    align-self: flex-end;
-    top: 10vw;
-    transition: top 0.4s ease;
-    /* Adiciona uma transição suave para o efeito visual */
-  }
+    .posicionar-img-home {
+        align-self: flex-end;
+        top: 10vw;
+        transition: top 0.4s ease;
+        /* Adiciona uma transição suave para o efeito visual */
+    }
 }
 
 .texto-subtitulo-inicial {
-  font-size: 25px;
-  font-family: "Bebas Neue", sans-serif;
-  text-align: -webkit-center;
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: -webkit-center;
 }
 
 .espacamento-home {
-  padding-top: 10%;
+    padding-top: 10%;
 }
 
 .alinhar-centro {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
 }
 
 .conteudo {
-  position: absolute;
-  color: #fff;
-  text-wrap: balance;
-  font-size: 50px;
-  text-shadow: 4px 2px 20px black;
+    position: absolute;
+    color: #fff;
+    text-wrap: balance;
+    font-size: 50px;
+    text-shadow: 4px 2px 20px black;
 
-  padding: 96px;
-  z-index: 999;
+    padding: 96px;
+    z-index: 999;
 }
-

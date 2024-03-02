@@ -8,7 +8,7 @@ import { FaqComponent } from '../faq/faq.component';
 import { FooterComponent } from '../footer/footer.component';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { HeaderComponent } from '../header/header.component';
-import { HomeComponent } from '../home/home.component';
+import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +30,7 @@ import {
 import { GirassolComponent } from '../girassol/girassol.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductionsComponent } from '../productions/productions.component';
+import { HomeComponent } from '../home/home.component';
 
 @NgModule({
     declarations: [
@@ -37,13 +38,14 @@ import { ProductionsComponent } from '../productions/productions.component';
         CarrosselComponent,
         HeaderComponent,
         FooterComponent,
-        HomeComponent,
+        LandingPageComponent,
         AboutComponent,
         GalleryComponent,
         FaqComponent,
         ContactComponent,
         GirassolComponent,
-        ProductionsComponent
+        ProductionsComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

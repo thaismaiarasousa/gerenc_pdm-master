@@ -7,25 +7,17 @@
         <span></span>
     </div>
 
-    <nav *ngIf="!isScrolled">
-        <a routerLink="/home">Agendar Aula</a>
-        <a routerLink="/sobre">Sobre nós</a>
-        <a routerLink="/galeria">Galeria</a>
-        <a routerLink="/perguntas">Perguntas Frequentes</a>
-        <a routerLink="/contato">Contato e Localização</a>
-    </nav>
-    
     <div class="logo" (click)="scrollToTop()">
         <img [ngClass]="animateImage ? 'desce-imagem' : 'sobe-imagem'" class="logo-animation" src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
     </div>
 
     <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">
-        <!-- Links do menu para dispositivos móveis -->
-        <a routerLink="/home" (click)="closeMenu()">Agendar Aula</a>
-        <a routerLink="/home" (click)="closeMenu()">Avisos</a>
-        <a routerLink="/home" (click)="closeMenu()">Quem Somos</a>
-        <a routerLink="/galeria" (click)="closeMenu()">Galeria</a>
-        <a routerLink="/perguntas" (click)="closeMenu()">Perguntas Frequentes</a>
-        <a routerLink="/contato" (click)="closeMenu()">Contato e Localização</a>
+        <a (click)="closeMenu()" routerLink="/home">Inicio</a>
+        <a (click)="closeMenu()" routerLink="/sobre">Sobre nós</a>
+        <a (click)="closeMenu()" routerLink="/galeria">Galeria</a>
+        <a (click)="closeMenu()" routerLink="/perguntas">Perguntas Frequentes</a>
+        <a (click)="closeMenu()" routerLink="/contato">Contato e Localização</a>
     </div>
 </header>
+
+<app-home></app-home>
