@@ -1,4 +1,4 @@
-.sobrenos-container {
+.producoes-container {
     font-family: "Bebas Neue", sans-serif;
     font-size: 18px;
     line-height: 25px;
@@ -9,9 +9,17 @@
     font-family: 'Anton';
 }
 
+.texto-subtitulo {
+    font-family: "Bebas Neue", sans-serif;
+}
+
 .img-sobrenos {
     border-radius: 250px;
     width: 100%;
-    border: 23px solid #f18bb8;
+    border: 23px solid #ffffff;
     padding: 0;
+}
+
+.centralizar {
+    place-content: center;
 }

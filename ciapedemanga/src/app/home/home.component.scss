@@ -27,6 +27,10 @@ $cor-amarela: #ffff00;
   font-style: normal;
 }
 
+section {
+  padding: 56px;
+}
+
 .home-container section:nth-child(even) {
   background-color: $cor-branca;
   color: $cor-preta;
@@ -69,7 +73,8 @@ video {
   .posicionar-img-home {
     align-self: flex-end;
     top: 10vw;
-    transition: top 0.4s ease; /* Adiciona uma transição suave para o efeito visual */
+    transition: top 0.4s ease;
+    /* Adiciona uma transição suave para o efeito visual */
   }
 }
 
@@ -85,6 +90,8 @@ video {
 
 .alinhar-centro {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
 }
 
 .conteudo {
@@ -96,30 +103,5 @@ video {
 
   padding: 96px;
   z-index: 999;
-}
-
-
-/* produções */
-.producoes-container {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 18px;
-  line-height: 25px;
-  padding: 56px;
-}
-
-.texto-titulo {
-  font-size: 50px;
-  font-family: 'Anton';
-}
-
-.texto-subtitulo {
-  font-family: "Bebas Neue", sans-serif;
-}
-
-.img-sobrenos {
-  border-radius: 250px;
-  width: 100%;
-  border: 23px solid #ffffff;
-  padding: 0;
 }
 

@@ -14,9 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 import { CarrosselComponent } from '../carrossel/carrossel.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -26,9 +26,10 @@ import {
     NguCarouselPrevDirective,
     NguItemComponent,
     NguTileComponent
-  } from '@ngu/carousel';
-  import { GirassolComponent } from '../girassol/girassol.component';
-  import { TresPontinhosComponent } from '../tres-pontinhos/tres-pontinhos.component';
+} from '@ngu/carousel';
+import { GirassolComponent } from '../girassol/girassol.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ProductionsComponent } from '../productions/productions.component';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,7 @@ import {
         FaqComponent,
         ContactComponent,
         GirassolComponent,
-        TresPontinhosComponent
+        ProductionsComponent
     ],
     imports: [
         BrowserModule,
@@ -56,13 +57,14 @@ import {
         MatIconModule,
         MatButtonModule,
         MatTooltipModule,
-        NguCarousel, 
-        NguTileComponent,   
+        NguCarousel,
+        NguTileComponent,
         NguCarousel,
         NguCarouselDefDirective,
         NguCarouselNextDirective,
         NguCarouselPrevDirective,
         NguItemComponent,
+        MatExpansionModule
     ],
     exports: [MainComponent]
 })

@@ -1,23 +1,19 @@
-.contato-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    clip-path: polygon(0 0, 97% 9%, 100% 86%, 7% 92%);
-    padding: 8vw;
+img {
+    width: 44px;
+    padding-bottom: 30px;
+    cursor: pointer;
+}
 
-    img {
-        width: 44px;
-        padding-right: 10px;
-        cursor: pointer;
-    }
+.mapa-localizacao {
+    width: 60vw;
+    height: 25vh;
+}
 
-    .mapa-localizacao {
-        width: 60vw;
-        height: 25vh;
-    }
+.texto-titulo {
+    font-size: 50px;
+    font-family: 'Anton';
+}
 
-    .texto-titulo {
-        font-size: 50px;
-        font-family: 'Anton';
-    }
+.img-social {
+    width: 83px;
 }
