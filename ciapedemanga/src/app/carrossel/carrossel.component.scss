@@ -1,8 +1,11 @@
 ::ng-deep .tile {
   box-shadow: none !important;
+  padding: 20px;
 }
 
 .img-border {
-  border: 2px solid #f18bb8;
-  border-radius: 20px;
+  border: 13px solid #f18bb8;
+  border-radius: 100px;
+  width: 32vw;
+  padding: 0;
 }

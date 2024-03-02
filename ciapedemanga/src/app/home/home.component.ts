@@ -16,7 +16,7 @@ export class HomeComponent {
   onWindowScroll(): void {
     const isWideScreen = window.innerWidth >= 1000;
     const isAtTop = window.scrollY === 0;
-    
+
     if (isWideScreen) {
       this.divTop = isAtTop ? 0 : (this.divTop === 15 && isAtTop) ? 0 : 15;
     } else {
