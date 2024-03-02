@@ -6,7 +6,7 @@
 }
 
 $cor-rosa: #F18BB8;
-$cor-branca: #ffffff;
+$cor-branca: #f7f1e9;
 $cor-preta: #000000;
 $cor-amarela: #ffff00;
 
@@ -53,17 +53,16 @@ video {
 .texto-titulo-inicial {
     font-size: 7em;
     font-family: 'Stadio', sans-serif;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px #f7f1e9;
     word-break: break-word;
-    // fontes utilizadas em outros
-    // font-family: 'Noto Sans', sans-serif;
-    // font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    padding-bottom: 20px;
 }
 
 .img-home {
     border-radius: 250px;
     width: 100%;
-    border: 8px solid white;
+    border: 8px solid #f7f1e9;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -83,6 +82,7 @@ video {
 
 .espacamento-home {
     padding-top: 10%;
+    padding-bottom: 8%;
 }
 
 .alinhar-centro {
@@ -93,7 +93,7 @@ video {
 
 .conteudo {
     position: absolute;
-    color: #fff;
+    color: #f7f1e9;
     text-wrap: balance;
     font-size: 50px;
     text-shadow: 4px 2px 20px black;

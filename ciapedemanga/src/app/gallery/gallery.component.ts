@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class GalleryComponent {
 
+  redirecionarInstagram() {
+    let linkRedirecionar = `https://www.instagram.com/ciapedemanga/`;
+    window.open(linkRedirecionar, '_blank');
+  }
 }

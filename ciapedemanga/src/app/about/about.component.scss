@@ -16,6 +16,18 @@
     padding: 0;
 }
 
+@media only screen and (min-width: 1000px) {
+    .img-sobrenos {
+        bottom: 100px;
+        left: 30px;
+    }
+}
+
 section {
     padding: 56px;
+}
+
+.texto-justificar {
+    text-align: justify;
+    padding-right: 50px;
 }
