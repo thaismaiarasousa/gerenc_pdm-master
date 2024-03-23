@@ -11,7 +11,19 @@ $cor-preta: #000000;
 $cor-amarela: #ffff00;
 
 .home-container {
-    background-color: $cor-rosa;
+    // background-color: $cor-rosa;
+    background: url('../../assets/fotos/VARIETÉ DOS SONHOS-8.jpg');
+    background-size: cover;
+    position: relative;
+    filter: brightness(50%);
+    background-position: 0px -200px;
+    width: 100%;
+    height: 70%;
+}
+
+.home {
+    position: absolute;
+    top: 0;
 }
 
 .anton-regular {
@@ -30,13 +42,8 @@ section {
     padding: 56px;
 }
 
-.home-container section:nth-child(even) {
-    background-color: $cor-branca;
-    color: $cor-preta;
-}
-
-.home-container section:nth-child(odd) {
-    background-color: $cor-rosa;
+.home-container section {
+    background-color: transparent !important;
     color: $cor-preta;
 }
 
@@ -83,6 +90,7 @@ video {
 .espacamento-home {
     padding-top: 10%;
     padding-bottom: 8%;
+    place-content: center;
 }
 
 .alinhar-centro {
@@ -100,4 +108,10 @@ video {
 
     padding: 96px;
     z-index: 999;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

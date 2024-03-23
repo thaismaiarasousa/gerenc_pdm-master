@@ -1,11 +1,7 @@
-<div class="home-container">
-
-    <section id="agendarExperimental" class="container">
-        <!-- VER SE COLOCA VIDEO OU NÃO
-        VIDEO É LEGAL QUE DEIXA MAIS DINAMICO-->
-        <!-- <video width="100%" [muted]="true" autoplay="true" loop="true">
-            <source src="../../assets/video-home/video-home-apresentacao.mp4" type="video/mp4">
-        </video> -->
+<div class="home-container flex-container">
+</div>
+<div class="flex-container container">
+    <section id="agendarExperimental" class="container home">
         <div class="row espacamento-home">
             <div class="col-lg-3">
                 <app-girassol></app-girassol>
@@ -13,23 +9,19 @@
             <div class="col-lg-6 alinhar-centro">
                 <h1 class="texto-titulo-inicial">Cia. Pé de Manga</h1>
             </div>
-            <div class="col-lg-3 posicionar-img-home" [ngStyle]="{'top.vw': divTop}">
-                <img class="img-home" src="assets\fotos\VARIETÉ DOS SONHOs-102.jpg" alt="Sua Imagem">
+            <div class="col-lg-3">
+                <app-girassol></app-girassol>
             </div>
+            <!-- <div class="col-lg-3 posicionar-img-home" [ngStyle]="{'top.vw': divTop}">
+                <img class="img-home" src="assets\fotos\VARIETÉ DOS SONHOs-42.jpg" alt="Sua Imagem">
+            </div> -->
         </div>
 
         <div class="row">
             <div class="col-lg-12 alinhar-centro">
-                <span class="texto-subtitulo-inicial">
-                    Clique no botão abaixo e agende já a sua <br><strong>aula experimental gratuita</strong>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col alinhar-centro">
                 <button mat-raised-button matTooltip="Enviar via Whatsapp" color="accent"
                     aria-label="Enviar via Whatsapp" (click)="redirecionarWhatsapp()">
-                    Agendar aula experimental via Whatsapp
+                    Agendar aula experimental <strong>gratuita</strong>
                 </button>
             </div>
         </div>

@@ -24,7 +24,7 @@ export class CarrosselComponent implements OnInit {
     5: []
   };
   public carouselTile: NguCarouselConfig = {
-    grid: { xs: 2, sm: 2, md: 3, lg: 3, all: 0 },
+    grid: { xs: 1, sm: 1, md: 1, lg: 2, all: 0 },
     slide: 3,
     speed: 250,
     point: {
