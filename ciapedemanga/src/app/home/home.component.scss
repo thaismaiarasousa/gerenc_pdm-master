@@ -38,9 +38,9 @@ $cor-amarela: #ffff00;
     font-style: normal;
 }
 
-section {
-    padding: 56px;
-}
+// section {
+//     padding: 56px 0 56px 0;
+// }
 
 .home-container section {
     background-color: transparent !important;
@@ -58,11 +58,11 @@ video {
 }
 
 .texto-titulo-inicial {
-    font-size: 7em;
+    font-size: 100px;
     font-family: 'Stadio', sans-serif;
     -webkit-text-stroke: 1px #f7f1e9;
-    word-break: break-word;
-    line-height: 100px;
+    // word-break: break-word;
+    // line-height: 100px;
     padding-bottom: 20px;
 }
 
@@ -91,6 +91,13 @@ video {
     padding-top: 10%;
     padding-bottom: 8%;
     place-content: center;
+}
+
+@media only screen and (max-width: 995px) {
+    .espacamento-home {
+        position: relative;
+        top: 123px;
+    }
 }
 
 .alinhar-centro {
