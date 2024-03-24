@@ -1,7 +1,5 @@
 <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
-
-  <ngu-tile class="tile row" *nguCarouselDef="let item; let i = index">
-    <img class="img-border col" [src]="item" draggable="false">
-  </ngu-tile>
-
+  <div class="tile row item" *nguCarouselDef="let item; let i = index">
+    <img class="img-border col tile" [ngStyle]="{'border-color': corBorda}" [src]="item" draggable="false">
+  </div>
 </ngu-carousel>

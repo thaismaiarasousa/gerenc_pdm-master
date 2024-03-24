@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './productions.component.scss'
 })
 export class ProductionsComponent {
-
+  corDaBorda = '#f18bb8';
+  imagensGaleria = [
+    'assets/fotos/NINHO DA GARÇA.jpg',
+    'assets/fotos/VARIETÉ DOS SONHOS.jpg'
+  ];
 }

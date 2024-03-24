@@ -9,3 +9,16 @@
   width: 32vw;
   padding: 0;
 }
+
+.item {
+  box-sizing: border-box; 
+}
+
+.tile {
+  min-height: 200px;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}

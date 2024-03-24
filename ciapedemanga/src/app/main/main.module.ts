@@ -31,6 +31,7 @@ import { GirassolComponent } from '../girassol/girassol.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductionsComponent } from '../productions/productions.component';
 import { HomeComponent } from '../home/home.component';
+import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import { HomeComponent } from '../home/home.component';
         ContactComponent,
         GirassolComponent,
         ProductionsComponent,
-        HomeComponent
+        HomeComponent,
+        IdealizadoraComponent
     ],
     imports: [
         BrowserModule,
