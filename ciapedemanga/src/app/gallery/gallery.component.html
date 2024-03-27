@@ -1,0 +1,16 @@
+<section id="galeria" class="galeria-container container">
+    <h2 class="texto-titulo">
+        NOSSA GALERIA
+    </h2>
+    <div class="row">
+        <div class="col-lg-12">
+            <app-carrossel *ngIf="imagensGaleria && imagensGaleria.length" [listaImagens]="imagensGaleria" [corBorda]="'#f7f1e9'"></app-carrossel>
+        </div>
+    </div>
+    <div class="row">
+        <button class="col-lg-2" mat-raised-button matTooltip="Botão Whatsapp" color="accent" aria-label="Botão Whatsapp"
+            (click)="redirecionarInstagram()">
+            Ver mais fotos
+        </button>
+    </div>
+</section>

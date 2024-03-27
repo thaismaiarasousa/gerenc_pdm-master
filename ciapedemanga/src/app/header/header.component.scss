@@ -1,0 +1,163 @@
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e1e3b8c9;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.5s ease;
+}
+
+.logo {
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  height: 3px;
+  width: 25px;
+  background-color: #f7f1e9;
+  margin: 5px 0;
+  display: block;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  flex-direction: column;
+}
+
+.menu a {
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #f7f1e9;
+}
+
+.show {
+  display: flex;
+}
+
+.header-container.scrolled {
+  background-color: transparent;
+}
+
+.menu-open {
+  right: 0;
+  /* Mostrar o menu ao clicar no botão */
+}
+
+.menu-container {
+  /* Adapte conforme necessário */
+  position: fixed;
+  padding: 20px 0 0px 45px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f7f1e9;
+  box-shadow: 20px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+  transition: width 1s ease 2s;
+
+  a {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 110%;
+    width: fit-content;
+    -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+
+  }
+
+  a:hover {
+    border-color: transparent;
+    background: #F18BB8;
+    width: 100%;
+  }
+}
+
+.show {
+  right: 0;
+  /* Mostrar o menu ao clicar no botão, movendo para a esquerda */
+}
+
+.menu-icon2 {
+  z-index: 10000;
+  margin-left: 10px;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+  }
+
+  &.open {
+    span:first-child {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:last-child {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+}
+
+.logo-animation {
+  transform: translateX(-50%);
+  transition: top 0.5s linear, opacity 1s ease-in-out, max-height 1s ease-in-out;
+  top: 0;
+  position: fixed;
+  right: 0px;
+}
+
+.desce-imagem {
+  top: 90%;
+  opacity: 0;
+}
+
+.sobe-imagem {
+  top: 0%;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.ajuste {
+  margin-bottom: 56px;
+
+}

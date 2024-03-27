@@ -1,0 +1,23 @@
+<!-- header.component.html -->
+<header class="header-container" [ngClass]="{'scrolled': isScrolled}">
+    
+    <div *ngIf="isScrolled" class="menu-icon2" [class.open]="isMenuOpen" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="logo" (click)="scrollToTop()">
+        <img [ngClass]="animateImage ? 'desce-imagem' : 'sobe-imagem'" class="logo-animation" src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
+    </div>
+
+    <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">
+        <a (click)="closeMenu()" routerLink="/home">Inicio</a>
+        <a (click)="closeMenu()" routerLink="/sobre">Sobre nós</a>
+        <a (click)="closeMenu()" routerLink="/galeria">Galeria</a>
+        <a (click)="closeMenu()" routerLink="/perguntas">Perguntas Frequentes</a>
+        <a (click)="closeMenu()" routerLink="/contato">Contato e Localização</a>
+    </div>
+</header>
+
+<app-home></app-home>
