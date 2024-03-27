@@ -29,7 +29,7 @@ $cor-amarela: #ffff00;
 
 .exibir-home {
     width: 100%;
-    height: calc(100vh - 150px);
+    height: 100%;
     background-color: transparent;
 }
 
@@ -132,4 +132,9 @@ $cor-amarela: #ffff00;
     filter: brightness(50%);
     background-size: cover;
     background-position: 0px -200px;
+}
+
+.botao-agendar {
+    bottom: 27px;
+    position: relative;
 }
