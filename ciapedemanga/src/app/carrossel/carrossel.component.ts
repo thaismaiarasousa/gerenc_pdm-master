@@ -7,7 +7,7 @@ import { NguCarouselConfig } from '@ngu/carousel';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarrosselComponent implements OnInit {
-  @Input() listaImagens!: string[];
+  @Input() listaImagens!: any[];
   @Input() corBorda!: string;
 
   imgags: string[] = [];

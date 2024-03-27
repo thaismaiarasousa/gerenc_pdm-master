@@ -8,7 +8,13 @@ import { Component } from '@angular/core';
 export class ProductionsComponent {
   corDaBorda = '#f18bb8';
   imagensGaleria = [
-    'assets/fotos/NINHO DA GARÇA.jpg',
-    'assets/fotos/VARIETÉ DOS SONHOS.jpg'
+    {
+      legenda: 'Ninho da Garça',
+      src: 'assets/fotos/NINHO DA GARÇA.jpg',
+    },
+    {
+      legenda: 'Varieté dos Sonhos',
+      src: 'assets/fotos/VARIETÉ DOS SONHOS.jpg'
+    }
   ];
 }

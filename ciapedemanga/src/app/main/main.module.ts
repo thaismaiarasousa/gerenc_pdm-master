@@ -1,4 +1,3 @@
-// main.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
@@ -32,6 +31,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductionsComponent } from '../productions/productions.component';
 import { HomeComponent } from '../home/home.component';
 import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
     declarations: [
@@ -68,7 +68,8 @@ import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
         NguCarouselNextDirective,
         NguCarouselPrevDirective,
         NguItemComponent,
-        MatExpansionModule
+        MatExpansionModule,
+        HttpClientModule
     ],
     exports: [MainComponent]
 })

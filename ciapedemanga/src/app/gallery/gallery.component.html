@@ -1,10 +1,10 @@
 <section id="galeria" class="galeria-container container">
-    <h2 class="texto-titulo row">
+    <h2 class="texto-titulo">
         NOSSA GALERIA
     </h2>
     <div class="row">
         <div class="col-lg-12">
-            <app-carrossel [listaImagens]="imagensGaleria" [corBorda]="'#f7f1e9'"></app-carrossel>
+            <app-carrossel *ngIf="imagensGaleria && imagensGaleria.length" [listaImagens]="imagensGaleria" [corBorda]="'#f7f1e9'"></app-carrossel>
         </div>
     </div>
     <div class="row">
