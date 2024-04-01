@@ -9,6 +9,6 @@
     font-family: 'Anton';
 }
 
-// section {
-//     padding: 56px 0 56px 0;
-// }
+div:not([class^="app-"]) {
+    background-color: #f18bb8;
+}

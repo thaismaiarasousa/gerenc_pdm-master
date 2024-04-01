@@ -27,3 +27,7 @@
 .ngucarousel-items .item {
     flex: 0 0 50%;
 }
+
+div:not([class^="app-"]) {
+    background-color: #f7f1e9;
+}

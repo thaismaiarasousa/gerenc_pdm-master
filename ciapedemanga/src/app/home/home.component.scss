@@ -11,7 +11,6 @@ $cor-preta: #000000;
 $cor-amarela: #ffff00;
 
 .home {
-    // position: absolute;
     top: 0;
 }
 
@@ -52,8 +51,6 @@ $cor-amarela: #ffff00;
     font-size: 100px;
     font-family: 'Stadio', sans-serif;
     -webkit-text-stroke: 1px #f7f1e9;
-    // word-break: break-word;
-    // line-height: 100px;
     padding-bottom: 20px;
 }
 
@@ -68,7 +65,6 @@ $cor-amarela: #ffff00;
         align-self: flex-end;
         top: 10vw;
         transition: top 0.4s ease;
-        /* Adiciona uma transição suave para o efeito visual */
     }
 }
 
@@ -87,7 +83,6 @@ $cor-amarela: #ffff00;
 @media only screen and (max-width: 995px) {
     .espacamento-home {
         position: relative;
-        // top: 123px;
     }
 }
 
@@ -98,7 +93,6 @@ $cor-amarela: #ffff00;
 }
 
 .conteudo {
-    // position: absolute;
     color: #f7f1e9;
     text-wrap: balance;
     font-size: 50px;
@@ -118,7 +112,7 @@ $cor-amarela: #ffff00;
     z-index: -1;
     position: fixed;
     width: 100%;
-    // position: relative;
+    height: 100%;
 }
 
 .dark-background::after {
@@ -137,4 +131,8 @@ $cor-amarela: #ffff00;
 .botao-agendar {
     bottom: 27px;
     position: relative;
+}
+
+.botao-agendar button {
+    z-index: 999;
 }

@@ -26,10 +26,6 @@
     }
 }
 
-// section {
-//     padding: 56px 0 56px 0;
-// }
-
 .texto-justificar {
     text-align: justify;
     padding-right: 50px;
@@ -39,4 +35,8 @@
     .tamanho-responsivo {
         font-size: 15px;
     }
+}
+
+div:not([class^="app-"]) {
+    background-color: #f7f1e9;
 }
