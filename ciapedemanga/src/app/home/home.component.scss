@@ -121,12 +121,26 @@ $cor-amarela: #ffff00;
     top: 0;
     width: 100%;
     height: 200%;
-    background: url('../../assets/fotos/VARIETÉ DOS SONHOS-8.jpg');
-    z-index: -1; /* Garante que o pseudo-elemento fique atrás do conteúdo */
+    z-index: -1; 
     filter: brightness(50%);
     background-size: cover;
     background-position: 0px -200px;
 }
+
+.image-container {
+    display: flex;
+    z-index: -1; 
+  }
+  
+  .image {
+    flex: 0 0 auto; /* Permite que as imagens tenham tamanho automático */
+    width: 25vw; /* A largura das imagens, ajuste conforme necessário */
+    height: 100vh; /* A altura das imagens, ajuste conforme necessário */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+    filter: brightness(50%);
+  }
 
 .botao-agendar {
     bottom: 27px;
