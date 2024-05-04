@@ -36,12 +36,12 @@ section {
   background-color: $cor-rosa;
 }
 
-.home-container section:nth-child(even) {
+.home-container section:nth-child(odd) {
   background-color: $cor-branca;
   color: $cor-preta;
 }
 
-.home-container section:nth-child(odd) {
+.home-container section:nth-child(even) {
   background-color: $cor-rosa;
   color: $cor-preta;
 }
