@@ -32,6 +32,7 @@ import { ProductionsComponent } from '../productions/productions.component';
 import { HomeComponent } from '../home/home.component';
 import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
 import { HttpClientModule } from '@angular/common/http'; 
+import { EventoComponent } from '../evento/evento.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
         GirassolComponent,
         ProductionsComponent,
         HomeComponent,
-        IdealizadoraComponent
+        IdealizadoraComponent,
+        EventoComponent
     ],
     imports: [
         BrowserModule,

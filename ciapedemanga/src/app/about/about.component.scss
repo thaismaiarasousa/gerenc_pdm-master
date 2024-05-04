@@ -26,11 +26,17 @@
     }
 }
 
-// section {
-//     padding: 56px 0 56px 0;
-// }
-
 .texto-justificar {
     text-align: justify;
     padding-right: 50px;
+}
+
+@media only screen and (max-width: 300px) {
+    .tamanho-responsivo {
+        font-size: 15px;
+    }
+}
+
+div:not([class^="app-"]) {
+    background-color: #f7f1e9;
 }

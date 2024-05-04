@@ -11,9 +11,6 @@ $cor-branca: #f7f1e9;
 $cor-preta: #000000;
 $cor-amarela: #ffff00;
 
-.home-container {
-  background-color: $cor-rosa;
-}
 
 .anton-regular {
   font-family: "Anton", sans-serif;
@@ -35,12 +32,16 @@ section {
   padding: 0;
 }
 
-.home-container section:nth-child(even) {
+.home-container {
+  background-color: $cor-rosa;
+}
+
+.home-container section:nth-child(odd) {
   background-color: $cor-branca;
   color: $cor-preta;
 }
 
-.home-container section:nth-child(odd) {
+.home-container section:nth-child(even) {
   background-color: $cor-rosa;
   color: $cor-preta;
 }
