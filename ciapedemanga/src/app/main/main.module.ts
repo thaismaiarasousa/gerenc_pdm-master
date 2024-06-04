@@ -33,6 +33,7 @@ import { HomeComponent } from '../home/home.component';
 import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
 import { HttpClientModule } from '@angular/common/http'; 
 import { EventoComponent } from '../evento/evento.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
     declarations: [
@@ -71,7 +72,8 @@ import { EventoComponent } from '../evento/evento.component';
         NguCarouselPrevDirective,
         NguItemComponent,
         MatExpansionModule,
-        HttpClientModule
+        HttpClientModule,
+        MatTabsModule
     ],
     exports: [MainComponent]
 })

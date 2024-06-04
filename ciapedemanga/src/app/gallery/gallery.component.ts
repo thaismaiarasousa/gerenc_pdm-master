@@ -22,7 +22,6 @@ export class GalleryComponent implements OnInit {
               let listaMedia: any[];
               listaMedia = dataInsta.data;
               this.imagensGaleria = listaMedia.filter(i => i.media_type == 'IMAGE').slice(0, 4).map(y => { return { legenda: '', src: y.media_url } });
-              console.log(this.imagensGaleria)
             });
         }
       });
