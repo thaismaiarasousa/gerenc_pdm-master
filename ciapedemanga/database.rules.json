@@ -1,6 +1,14 @@
 {
   "rules": {
-    ".read": "true",
-    ".write": "false"
+    "horarios": {
+      ".read": true,
+      ".write": "auth.token.email === 'tadeu123546@gmail.com' || auth.token.email === 'ciapedemanga@gmail.com'"
+    },
+    "alunoHorarios": {
+      ".read": true,
+      ".write": "auth.token.email === 'tadeu123546@gmail.com' || auth.token.email === 'ciapedemanga@gmail.com'"
+    },
+    ".read": "auth.token.email === 'tadeu123546@gmail.com' || auth.token.email === 'ciapedemanga@gmail.com'",
+    ".write":"auth.token.email === 'tadeu123546@gmail.com' || auth.token.email === 'ciapedemanga@gmail.com'"
   }
 }

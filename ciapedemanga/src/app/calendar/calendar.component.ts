@@ -34,7 +34,17 @@ export class CalendarComponent implements OnInit {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay',
         },
-        initialView: 'dayGridMonth',
+        buttonText: {
+            today: 'Hoje',
+            month: 'Mês',
+            week: 'Semana',
+            day: 'Dia',
+            list: 'Lista',
+            next: 'Próximo',
+            prev: 'Anterior'
+        },
+        allDaySlot: false,
+        initialView: 'timeGridWeek',
         weekends: true,
         editable: false,
         selectMirror: false,
@@ -42,12 +52,13 @@ export class CalendarComponent implements OnInit {
         expandRows: true,
         timeZone: 'UTC',
         events: this.events,
-        // height: '98vh',
         slotLabelFormat: {
             hour: 'numeric',
             minute: 'numeric',
             omitZeroMinute: true
         },
+        slotMinTime: '07:00:00',
+        slotMaxTime: '23:00:00'
     };
 
     deParaDias: { [key: string]: any } = {
@@ -61,75 +72,70 @@ export class CalendarComponent implements OnInit {
     };
 
     ngOnInit() {
-        console.log('teste1')
-    
         this.getAllhorarios();
     }
 
     getAllhorarios() {
-
-        // lembrar de login
-        console.log('teste2')
-        
         const db = getDatabase(this.auth.app);
         const horariosRef = ref(db, 'horarios');
         const horarioAlunoRef = ref(db, 'alunoHorarios');
-        console.log('teste3')
 
-        onValue(horariosRef, (snapshot) => {
-            get(horarioAlunoRef).then(x => {
-                const horarioAlunos = Object.values(x.val()).flatMap(x => x);
-
-                const data = snapshot.val();
-                if (data) {
-                    this.events = [];
-                    const dataArray = Object.keys(data).map(key => ({ ...data[key], id: key }));
-
-                    for (let i = 0; i < dataArray.length; i++) {
-                        const horario = dataArray[i];
-
-                        const duracao = this.calcularDuracao(horario.HorarioInicio, horario.HorarioFim);
-                        if (!horario.AulaCancelada) {
-                            const dataAtual = new Date();
-                            dataAtual.setHours(horario.HorarioInicio.split(':')[0], horario.HorarioInicio.split(':')[1])
-                            const rule = new RRule({
-                                freq: RRule.WEEKLY,
-                                dtstart: dataAtual,
-                                until: new Date(`${dataAtual.getFullYear()}-08-30T${horario.HorarioFim}`),
-                                byweekday: [this.deParaDias[horario.DiasSemanaAula]],
-                                tzid: 'UTC',
-                            });
-
-                            const dates = rule.all();
-
-                            const alunosDesseHorario = horarioAlunos
-                                .filter((x: any) => x.idHorario === horario.id)
-
-                            dates.forEach((date, index) => {
-                                const start = this.adjustToTimezone(date, -6);
-                                const end = this.adjustToTimezone(new Date(date.getTime() + duracao.horas * 3600 * 1000 + duracao.minutos * 60 * 1000), -6); // Ajusta para UTC-3
-                                const tituloHorario = horario.titulo ?? `Aula ${horario.HorarioInicio} às ${horario.HorarioFim}`;
-                                const dateFormatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
-
-                                const alunosAvulsosERecorrentes = alunosDesseHorario.filter((x: any) => x.recorrente || (x.dataAula === dateFormatted));
-                                const horarioLotado = horario.CapacidadeMaxima <= alunosAvulsosERecorrentes.length;
-
-                                (this.events as any).push(
-                                    {
-                                        id: `${horario.id}-${index}`,
-                                        groupId: horario.id,
-                                        title: (horarioLotado ? ' - Lotado' : ''),
-                                        start: start.toISOString(),
-                                        end: end.toISOString(),
-                                        duration: { hours: duracao.horas, minutes: duracao.minutos },
-                                        extendedProps: horario
-                                    });
-                            });
-                        }
-                    }
-
-                    this.calendarOptions.events = this.events;
+        onValue(horariosRef, (snapshotHorario) => {
+            get(horarioAlunoRef).then(snapshotHorarioAluno => {
+                const horarios = snapshotHorario.val();
+                const horarioAluno = snapshotHorarioAluno.val();
+                if (!horarioAluno || !horarios) {
+                    return;
                 }
+
+                const horarioAlunos = Object.values(horarioAluno).flatMap(x => x);
+
+                this.events = [];
+                const dataArray = Object.keys(horarios).map(key => ({ ...horarios[key], id: key }));
+
+                for (let i = 0; i < dataArray.length; i++) {
+                    const horario = dataArray[i];
+
+                    const duracao = this.calcularDuracao(horario.HorarioInicio, horario.HorarioFim);
+                    if (!horario.AulaCancelada) {
+                        const dataAtual = new Date();
+                        dataAtual.setHours(horario.HorarioInicio.split(':')[0], horario.HorarioInicio.split(':')[1])
+                        const rule = new RRule({
+                            freq: RRule.WEEKLY,
+                            dtstart: dataAtual,
+                            until: new Date(`${dataAtual.getFullYear()}-08-30T${horario.HorarioFim}`),
+                            byweekday: [this.deParaDias[horario.DiasSemanaAula]],
+                            tzid: 'UTC',
+                        });
+
+                        const dates = rule.all();
+
+                        const alunosDesseHorario = horarioAlunos
+                            .filter((x: any) => x.idHorario === horario.id)
+
+                        dates.forEach((date, index) => {
+                            const start = this.adjustToTimezone(date, -6);
+                            const end = this.adjustToTimezone(new Date(date.getTime() + duracao.horas * 3600 * 1000 + duracao.minutos * 60 * 1000), -6); // Ajusta para UTC-3
+                            const dateFormatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                            const alunosAvulsosERecorrentes = alunosDesseHorario.filter((x: any) => x.recorrente || (x.dataAula === dateFormatted));
+                            const horarioLotado = horario.CapacidadeMaxima <= alunosAvulsosERecorrentes.length;
+
+                            (this.events as any).push(
+                                {
+                                    id: `${horario.id}-${index}`,
+                                    groupId: horario.id,
+                                    title: (horarioLotado ? ' - Lotado' : ''),
+                                    start: start.toISOString(),
+                                    end: end.toISOString(),
+                                    duration: { hours: duracao.horas, minutes: duracao.minutos },
+                                    extendedProps: horario
+                                });
+                        });
+                    }
+                }
+
+                this.calendarOptions.events = this.events;
             });
         });
     }

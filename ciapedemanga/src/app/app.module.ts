@@ -14,7 +14,7 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { routes } from './app.routes';
 import { AngularFireModule } from '@angular/fire/compat';
 
-const isDev = true;
+const isDev = false;
 let firebaseConfig = {};
 
 if (isDev) {
