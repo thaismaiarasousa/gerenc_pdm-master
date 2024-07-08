@@ -5,6 +5,7 @@ import { FaqComponent } from './faq/faq.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { MainComponent } from './main/main.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,7 @@ export const routes: Routes = [
       { path: 'galeria', component: GalleryComponent },
       { path: 'perguntas', component: FaqComponent },
       { path: 'contato', component: ContactComponent },
+      { path: 'calendario', component: CalendarComponent },
     ]
   }
 ];

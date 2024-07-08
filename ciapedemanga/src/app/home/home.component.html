@@ -19,9 +19,16 @@
 
     <div class="row botao-agendar">
         <div class="col-12 alinhar-centro">
-            <button mat-raised-button matTooltip="Enviar via Whatsapp" color="accent" aria-label="Enviar via Whatsapp"
+            <button mat-raised-button matTooltip="Agendar aula via Whatsapp"
+             color="accent" aria-label="Agendar aula via Whatsapp"
                 (click)="redirecionarWhatsapp()">
                 Agendar aula experimental <strong>gratuita</strong>
+            </button>
+        </div>
+        <div class="col-12 alinhar-centro" style="margin-top: 50px;">
+            <button mat-raised-button matTooltip="Acessar calendário" color="accent"
+             aria-label="Acessar calendário" routerLink="/calendario">
+                Acessar calendário de aulas
             </button>
         </div>
     </div>

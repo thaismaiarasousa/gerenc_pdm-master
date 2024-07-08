@@ -31,9 +31,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ProductionsComponent } from '../productions/productions.component';
 import { HomeComponent } from '../home/home.component';
 import { IdealizadoraComponent } from '../idealizadora/idealizadora.component';
-import { HttpClientModule } from '@angular/common/http'; 
 import { EventoComponent } from '../evento/evento.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -72,8 +72,8 @@ import { MatTabsModule } from '@angular/material/tabs';
         NguCarouselPrevDirective,
         NguItemComponent,
         MatExpansionModule,
+        MatTabsModule,
         HttpClientModule,
-        MatTabsModule
     ],
     exports: [MainComponent]
 })
