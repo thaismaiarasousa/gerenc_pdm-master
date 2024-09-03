@@ -103,7 +103,7 @@ export class CalendarComponent implements OnInit {
                         const rule = new RRule({
                             freq: RRule.WEEKLY,
                             dtstart: dataAtual,
-                            until: new Date(`${dataAtual.getFullYear()}-08-30T${horario.HorarioFim}`),
+                            until: new Date(`${dataAtual.getFullYear()}-12-30T${horario.HorarioFim}`),
                             byweekday: [this.deParaDias[horario.DiasSemanaAula]],
                             tzid: 'UTC',
                         });
@@ -111,27 +111,30 @@ export class CalendarComponent implements OnInit {
                         const dates = rule.all();
 
                         const alunosDesseHorario = horarioAlunos
-                            .filter((x: any) => x.idHorario === horario.id)
-
+                            .filter((x: any) => x.idHorario === horario.id);
+                        
                         dates.forEach((date, index) => {
                             const start = this.adjustToTimezone(date, -6);
                             const end = this.adjustToTimezone(new Date(date.getTime() + duracao.horas * 3600 * 1000 + duracao.minutos * 60 * 1000), -6); // Ajusta para UTC-3
+                            const tituloHorario = horario.titulo ?? `Aula ${horario.HorarioInicio} às ${horario.HorarioFim}`;
                             const dateFormatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
-
+            
                             const alunosAvulsosERecorrentes = alunosDesseHorario.filter((x: any) => x.recorrente || (x.dataAula === dateFormatted));
-                            const horarioLotado = horario.CapacidadeMaxima <= alunosAvulsosERecorrentes.length;
-
+                            const faltasDiaHorario = alunosDesseHorario.filter((x: any) => x.diaFalta && x.diaFalta.split(', ')[1] === dateFormatted && x.falta);
+            
+                            const horarioLotado = horario.CapacidadeMaxima <= (alunosAvulsosERecorrentes.length - faltasDiaHorario.length);
+            
                             (this.events as any).push(
                                 {
-                                    id: `${horario.id}-${index}`,
-                                    groupId: horario.id,
-                                    title: (horarioLotado ? ' - Lotado' : ''),
-                                    start: start.toISOString(),
-                                    end: end.toISOString(),
-                                    duration: { hours: duracao.horas, minutes: duracao.minutos },
-                                    extendedProps: horario
+                                id: `${horario.id}-${index}`,
+                                groupId: horario.id,
+                                title: (horarioLotado ? 'Lotado - ' : '') + tituloHorario,
+                                start: start.toISOString(),
+                                end: end.toISOString(),
+                                duration: { hours: duracao.horas, minutes: duracao.minutos },
+                                extendedProps: horario
                                 });
-                        });
+                            });
                     }
                 }
 

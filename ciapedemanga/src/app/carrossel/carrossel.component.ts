@@ -33,6 +33,8 @@ export class CarrosselComponent implements OnInit {
     touch: true,
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
+  hoveredIndex: number | null = null;
+
   constructor() { }
 
   ngOnInit() {
@@ -54,5 +56,14 @@ export class CarrosselComponent implements OnInit {
       }
     }
   }
+
+  hoverIn(index: number) {
+    this.hoveredIndex = index;
+  }
+
+  hoverOut(index: number) {
+    this.hoveredIndex = null;
+  }
+
 }
 
