@@ -7,6 +7,9 @@
             <div class="col-lg-12">
                 <app-carrossel *ngIf="imagensGaleria && imagensGaleria.length" [listaImagens]="imagensGaleria"
                     [corBorda]="'#f7f1e9'"></app-carrossel>
+                <div *ngIf="!imagensGaleria || !imagensGaleria.length">
+                    Ocorreu um erro ao carregar as fotos, mas você pode ver nossas postagens no link abaixo!
+                </div>
             </div>
         </div>
         <div class="row">
