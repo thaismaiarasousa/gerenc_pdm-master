@@ -1,0 +1,10 @@
+<ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+  <div class="tile row item" *nguCarouselDef="let item; let i = index"
+  (mouseenter)="hoverIn(i)"
+  (mouseleave)="hoverOut(i)">
+    <img class="img-border col tile" [ngStyle]="{'border-color': corBorda}" [src]="item.src" draggable="false"
+    [ngClass]="{'hovered': hoveredIndex === i}">
+    <span *ngIf="item.legenda" class="legenda">{{item.legenda}}</span>
+    <button *ngIf="hoveredIndex === i" class="legenda-ver-mais-btn">Ver mais fotos</button>
+  </div>
+</ngu-carousel>

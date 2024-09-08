@@ -1,0 +1,26 @@
+$cor-amarela: #ffff00;
+
+
+.girassol {
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.petalas {
+  position: absolute;
+}
+
+.paralelepipedo {
+  width: 5px;
+  height: 180px;
+  background-color: $cor-amarela;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

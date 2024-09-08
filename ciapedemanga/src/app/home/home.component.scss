@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Stadio';
+    src: url('../../assets/fonts/FontsFree-Net-Stadio-Now-Display-Bold-trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$cor-rosa: #F18BB8;
+$cor-branca: #f7f1e9;
+$cor-preta: #000000;
+$cor-amarela: #ffff00;
+
+.home {
+    top: 0;
+}
+
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.exibir-home {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.home-container section {
+    background-color: transparent !important;
+    color: $cor-preta;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.texto-titulo-inicial {
+    font-size: 100px;
+    font-family: 'Stadio', sans-serif;
+    -webkit-text-stroke: 1px #f7f1e9;
+    padding-bottom: 20px;
+}
+
+.img-home {
+    border-radius: 250px;
+    width: 100%;
+    border: 8px solid #f7f1e9;
+}
+
+@media only screen and (min-width: 1000px) {
+    .posicionar-img-home {
+        align-self: flex-end;
+        top: 10vw;
+        transition: top 0.4s ease;
+    }
+}
+
+.texto-subtitulo-inicial {
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: -webkit-center;
+}
+
+.espacamento-home {
+    padding-top: 10%;
+    padding-bottom: 8%;
+    place-content: center;
+}
+
+@media only screen and (max-width: 995px) {
+    .espacamento-home {
+        position: relative;
+    }
+}
+
+.alinhar-centro {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.conteudo {
+    color: #f7f1e9;
+    text-wrap: balance;
+    font-size: 50px;
+    text-shadow: 4px 2px 20px black;
+
+    padding: 96px;
+    z-index: 999;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark-background {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.dark-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200%;
+    z-index: -1; 
+    filter: brightness(50%);
+    background-size: cover;
+    background-position: 0px -200px;
+}
+
+.image-container {
+    display: flex;
+    z-index: -1; 
+  }
+  
+  .image {
+    flex: 0 0 auto; /* Permite que as imagens tenham tamanho automático */
+    width: 25vw; /* A largura das imagens, ajuste conforme necessário */
+    height: 100vh; /* A altura das imagens, ajuste conforme necessário */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+    filter: brightness(50%);
+  }
+
+.botao-agendar {
+    bottom: 27px;
+    position: relative;
+}
+
+.botao-agendar button {
+    z-index: 999;
+}

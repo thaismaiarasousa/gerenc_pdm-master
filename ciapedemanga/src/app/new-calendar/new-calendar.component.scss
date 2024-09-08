@@ -1,0 +1,10 @@
+.dia-semana {
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

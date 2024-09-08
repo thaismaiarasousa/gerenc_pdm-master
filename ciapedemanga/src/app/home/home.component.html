@@ -1,0 +1,35 @@
+<div class="image-container   dark-background">
+    <div class="image" style="background-image: url('../../assets/fotos/VARIETÉ DOS SONHOs-42.jpg')"></div>
+    <div class="image" style="background-image: url('../../assets/fotos/VARIETÉ DOS SONHOs-29.jpg')"></div>
+    <div class="image" style="background-image: url('../../assets/fotos/VARIETÉ DOS SONHOs-19.jpg')"></div>
+    <div class="image" style="background-image: url('../../assets/fotos/VARIETÉ DOS SONHOs-95.jpg')"></div>
+</div>
+<section id="agendarExperimental" class="container home">
+    <div class="row espacamento-home">
+        <div class="col-lg-3">
+            <app-girassol></app-girassol>
+        </div>
+        <div class="col-lg-6 alinhar-centro">
+            <h1 class="texto-titulo-inicial">Cia. Pé de Manga</h1>
+        </div>
+        <div class="col-lg-3">
+            <app-girassol></app-girassol>
+        </div>
+    </div>
+
+    <div class="row botao-agendar">
+        <div class="col-12 alinhar-centro">
+            <button mat-raised-button matTooltip="Agendar aula via Whatsapp" color="accent"
+                aria-label="Agendar aula via Whatsapp" (click)="redirecionarWhatsapp()">
+                Agendar aula experimental <strong>gratuita</strong>
+            </button>
+        </div>
+        <div class="col-12 alinhar-centro" style="margin-top: 50px;">
+            <button mat-raised-button matTooltip="Acessar calendário" color="accent" aria-label="Acessar calendário"
+                (click)="navegarParaCalendario()">
+                Acessar calendário de aulas
+            </button>
+        </div>
+    </div>
+</section>
+<div class="exibir-home"></div>

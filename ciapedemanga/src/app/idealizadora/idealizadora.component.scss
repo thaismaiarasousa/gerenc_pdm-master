@@ -1,0 +1,34 @@
+.texto-titulo {
+    font-family: 'Anton';
+}
+
+.img-sobrenos {
+    border-radius: 250px;
+    width: 100%;
+    border: 23px solid #f7f1e9;
+    padding: 0;
+}
+
+.idealizadora-container {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.texto-justificar {
+    text-align: justify;
+    padding-right: 50px;
+    align-self: center;
+}
+
+.texto-titulo {
+    font-family: 'Anton';
+}
+
+.tamanho-titulo {
+    font-size: 50px;
+}
+
+div:not([class^="app-"]) {
+    background-color: #f18bb8;
+}

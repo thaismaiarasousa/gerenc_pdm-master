@@ -1,0 +1,36 @@
+<header class="header-container" [ngClass]="{'scrolled': isScrolled}">
+
+    <div *ngIf="isScrolled" class="menu-icon2" [class.open]="isMenuOpen" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="logo" (click)="scrollToTop()">
+        <img [ngClass]="animateImage ? 'desce-imagem' : 'sobe-imagem'" class="logo-animation"
+            src="assets/icons/cia-pe-de-manga-transparente.svg" alt="Logo da Cia Pé de Manga">
+    </div>
+
+    <div class="menu menu-container" [ngClass]="{ 'show': isMenuOpen }">
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('home', 'home')">
+            Inicio
+        </a>
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('sobre', 'sobrenos')">
+            Sobre nós
+        </a>
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('galeria', 'galeria')">
+            Galeria
+        </a>
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('perguntas', 'perguntasFrequentes')">
+            Perguntas Frequentes
+        </a>
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('contato', 'contato')">
+            Contato e Localização
+        </a>
+        <a (click)="closeMenu()" (click)="navegarParaCalendario('calendario', 'calendario')">
+            Calendário de aulas
+        </a>
+    </div>
+</header>
+
+<app-home></app-home>

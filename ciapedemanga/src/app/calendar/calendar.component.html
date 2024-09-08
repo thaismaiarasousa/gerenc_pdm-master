@@ -1,0 +1,9 @@
+<div style="background-color: #f7f1e9; padding-top: 50px; padding-bottom: 50px;">
+    <section id="calendario" class="container">
+        <full-calendar *ngIf="!loading" #calendar [options]="calendarOptions"></full-calendar>
+        <div *ngIf="loading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Obtendo dados...</p>
+        </div>
+    </section>
+</div>

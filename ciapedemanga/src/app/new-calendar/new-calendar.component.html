@@ -1,0 +1,49 @@
+<!-- <div style="background-color: #f7f1e9; padding-top: 50px; padding-bottom: 50px; display: flex; flex-wrap: nowrap;">
+    <div *ngFor="let dia of diasSemana" class="dia-semana">
+        <div style="text-align: center;">
+            {{dia}}
+        </div>
+        <div *ngFor="let aula of aulas">
+            <mat-card appearance="outlined" style="width: 200px; height: 200px;" *ngIf="aula.diaSemana === dia">
+                <mat-card-header>
+                    <mat-card-title>{{aula.start | date:'dd/MM/yyyy'}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="truncate">{{aula.title}}</p>
+                    <p>Inicio: {{aula.start | date:'HH:mm'}}</p>
+                    <p>Fim: {{aula.end | date:'HH:mm'}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div> -->
+
+<div style="background-color: #f7f1e9; padding-top: 50px; padding-bottom: 50px; display: flex; flex-wrap: nowrap;">
+    <div style="display: flex; align-items: center;">
+        <button mat-icon-button (click)="mudarDia(-1)">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <ng-container *ngFor="let dia of diasSemana">
+            <div class="dia-semana" *ngIf="dia === diaSelecionado">
+                <div style="text-align: center;">
+                    {{dia}}
+                </div>
+                <div *ngFor="let aula of aulas">
+                    <mat-card appearance="outlined" style="width: 200px; height: 200px;" *ngIf="aula.diaSemana === dia">
+                        <mat-card-header>
+                            <mat-card-title>{{aula.start | date:'dd/MM/yyyy'}}</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p class="truncate">{{aula.title}}</p>
+                            <p>Inicio: {{aula.start | date:'HH:mm'}}</p>
+                            <p>Fim: {{aula.end | date:'HH:mm'}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </ng-container>
+        <button mat-icon-button (click)="mudarDia(1)">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>
