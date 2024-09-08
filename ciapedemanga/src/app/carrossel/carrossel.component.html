@@ -1,6 +1,0 @@
-<ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
-  <div class="tile row item" *nguCarouselDef="let item; let i = index">
-    <img class="img-border col tile" [ngStyle]="{'border-color': corBorda}" [src]="item.src" draggable="false">
-    <span *ngIf="item.legenda" class="legenda">{{item.legenda}}</span>
-  </div>
-</ngu-carousel>
