@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faq',
@@ -21,9 +23,18 @@ import { Component } from '@angular/core';
     ])]
 })
 export class FaqComponent {
+
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {}
+
   redirecionarWhatsapp() {
     let numeroEnvio = '5581983741106';
     let linkRedirecionar = `https://api.whatsapp.com/send?l=pt-BR&phone=${numeroEnvio}&text=Olá Thais! Gostaria de saber mais sobre as aulas!`;
     window.open(linkRedirecionar, '_blank');
+  }
+
+  navegarParaCalendario() {
+    this.router.navigate(['/calendario']).then(() => {
+      this.viewportScroller.scrollToAnchor('calendario');
+    });
   }
 }

@@ -67,19 +67,12 @@ export class CalendarComponent implements OnInit {
         slotLabelContent: (arg) => '',
         displayEventEnd: false,
         slotMinTime: '07:00:00',
-        slotMaxTime: '21:00:00',
+        slotMaxTime: '23:00:00',
         slotDuration: '00:20:00',
         height: 'auto',
         eventContent: function (arg: any) {
-            const horarioLotado = arg.event.extendedProps.horarioLotado;
-            const tituloHorario = `<b>${arg.event.extendedProps.tituloHorario}</b>` ?? 'Aula';
-            const horarioInicio = arg.event.extendedProps.HorarioInicio;
-            const horarioFim = arg.event.extendedProps.HorarioFim;
-      
-            let title = `${horarioLotado ? '<b>Lotado</b> - ' : ''} ${tituloHorario} - ${horarioInicio} - ${horarioFim}`;
-
             return {
-                html: `${title.split(' - ').join('<br/>')}`
+                html: `${arg.event.title.split(' - ').join('<br/>')}`
             };
         },
     };
@@ -154,13 +147,16 @@ export class CalendarComponent implements OnInit {
                     const horario = dataArray[i];
 
                     const duracao = this.calcularDuracao(horario.HorarioInicio, horario.HorarioFim);
-                    if (!horario.AulaCancelada) {
+                    if (!horario.AulaCancelada && horario.Ativo) {
                         const dataAtual = new Date();
-                        dataAtual.setHours(horario.HorarioInicio.split(':')[0], horario.HorarioInicio.split(':')[1])
+                        const diaDaSemana = dataAtual.getDay();
+                        const diasParaSubtrair = diaDaSemana + 7; // Subtrai os dias da semana atual e mais 7 dias para voltar à semana passada
+                        dataAtual.setDate(dataAtual.getDate() - diasParaSubtrair);
+                        dataAtual.setHours(horario.HorarioInicio.split(':')[0], horario.HorarioInicio.split(':')[1]);
                         const rule = new RRule({
                             freq: RRule.WEEKLY,
                             dtstart: dataAtual,
-                            until: new Date(`${dataAtual.getFullYear()}-${String(dataAtual.getMonth() + 1).padStart(2, '0')}-30T${horario.HorarioFim}`),
+                            until: new Date(`${dataAtual.getFullYear()}-${String(dataAtual.getMonth() + 2).padStart(2, '0')}-30T${horario.HorarioFim}`),
                             byweekday: [this.deParaDias[horario.DiasSemanaAula]],
                             tzid: 'UTC',
                         });
@@ -184,7 +180,8 @@ export class CalendarComponent implements OnInit {
                             const faltasDiaHorario = alunosDesseHorario.filter((x: any) => x.diaFalta && x.diaFalta.split(', ')[1] === dateFormatted && x.falta);
 
                             const horarioLotado = horario.CapacidadeMaxima <= (alunosAvulsosERecorrentes.length - faltasDiaHorario.length);
-                            let title = `${horarioLotado ? 'Lotado - ' : ''} ${tituloHorario} - ${horario.HorarioInicio} - ${horario.HorarioFim}`;
+                            // let title = `${horarioLotado ? 'Lotado - ' : ''} ${tituloHorario} - ${horario.HorarioInicio} - ${horario.HorarioFim}`;
+                            let title = `${horarioLotado ? '<b>Lotado</b> - ' : ''} ${tituloHorario} - ${horario.HorarioInicio} - ${horario.HorarioFim}`;
 
                             horario.horarioLotado = horarioLotado;
                             horario.tituloHorario = tituloHorario;
@@ -195,8 +192,6 @@ export class CalendarComponent implements OnInit {
                                     title: title,
                                     start: start.toISOString(),
                                     end: end.toISOString(),
-                                    // duration: { hours: duracao.horas, minutes: duracao.minutos },
-                                    //  duration: { hours: 2, minutes: 0 },
                                     extendedProps: horario,
                                     color: horarioLotado ? '#dc3545' : '#28a745',
                                 });
